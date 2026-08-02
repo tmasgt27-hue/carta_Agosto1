@@ -154,17 +154,21 @@ Eres la mejor "coincidencia" que Dios puso en mi camino, una de esas personas qu
 
     }else{
 
+    const abrir =
+    document.getElementById("botonAbrir");
 
-        const boton =
-        document.getElementById("botonContinuar");
+    if(abrir){
 
+        abrir.style.display="none";
 
-        if(boton){
+    }
 
-            boton.style.display = "block";
+    const boton =
+    document.getElementById("botonContinuar");
 
-        }
+    if(boton){
 
+        boton.style.display="block";
 
     }
 
