@@ -143,25 +143,33 @@ Eres la mejor "coincidencia" que Dios puso en mi camino, una de esas personas qu
 
     function escribir(){
 
+    if(i < texto.length){
 
-        if(i < texto.length){
+        elemento.innerHTML += texto.charAt(i);
+
+        i++;
+
+        setTimeout(escribir,60);
 
 
-            elemento.innerHTML += texto.charAt(i);
+    }else{
 
 
-            i++;
+        const boton =
+        document.getElementById("botonContinuar");
 
 
-            setTimeout(escribir,60);
+        if(boton){
 
+            boton.style.display = "block";
 
         }
 
 
     }
 
-
+}
+        
     escribir();
 
 }
