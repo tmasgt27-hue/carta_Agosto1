@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para ti ✨</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<audio id="musica" loop>
+    <source src="music/piano.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<section id="inicio" class="escena activa">
+
+<div class="estrellas"></div>
+
+
+<h1>
+Conectando con el universo...
+</h1>
+
+
+<p>
+Un pequeño viaje creado especialmente para ti.
+</p>
+
+
+<button onclick="comenzar()">
+Comenzar
+</button>
+
+
+</section>
+
+
+
+
+
+<section id="carta" class="escena">
+
+
+<img src="img/carta.png" class="carta">
+
+
+<h2>
+Una carta llegó desde las estrellas...
+</h2>
+
+
+<button onclick="abrirCarta()">
+Abrir carta
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="astronauta" class="escena">
+
+
+<img src="img/astronauta.png" class="astronauta">
+
+
+<img src="img/lirios.png" class="lirios">
+
+
+<h2>
+He cruzado miles de estrellas para entregarte esto.
+</h2>
+
+
+<p>
+Incluso en un universo enorme,
+hay personas que brillan más que cualquier estrella.
+</p>
+
+
+<button onclick="mostrarTarjeta()">
+Recibir flores
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="tarjeta" class="escena">
+
+
+<img src="img/tarjeta.png" class="tarjeta">
+
+
+<button onclick="leerMensaje()">
+Abrir tarjeta
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="mensaje" class="escena">
+
+
+<div class="papel">
+
+<p id="texto"></p>
+
+</div>
+
+
+<button onclick="mostrarEscena('tickets')">
+Continuar viaje
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="tickets" class="escena">
+
+
+<img src="img/maquina.png" class="maquina">
+
+
+<h2>
+Recuerdos del universo
+</h2>
+
+
+<div id="ticket">
+
+Presiona para recibir un recuerdo
+
+</div>
+
+
+
+<button onclick="sacarTicket()">
+Sacar ticket
+</button>
+
+
+<button onclick="mostrarEscena('final')">
+Continuar
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="final" class="escena">
+
+
+<h2>
+✨
+</h2>
+
+
+<p>
+Gracias por hacer de mi vida
+el lugar donde siempre quiero volver.
+</p>
+
+
+
+<button onclick="reiniciar()">
+Volver a vivir esta historia
+</button>
+
+
+</section>
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
