@@ -193,3 +193,6 @@ Una de esas personas que llegan sin avisar...
     escribir();
 
 }
+
+
+alert("SCRIPT CARGADO");
