@@ -1,7 +1,7 @@
 // =================================
 // PARA TI ✨
 // CONECTANDO CON EL UNIVERSO 🌌
-// SCRIPT V2.0
+// SCRIPT V2.1
 // =================================
 
 
@@ -9,39 +9,36 @@
 // CAMBIO DE ESCENAS
 // ===============================
 
-
 function mostrarEscena(id){
 
     const escenas = document.querySelectorAll(".escena");
 
-
-    escenas.forEach(escena=>{
-
+    escenas.forEach(escena => {
         escena.classList.remove("activa");
-
     });
 
 
-    document.getElementById(id).classList.add("activa");
+    const nuevaEscena = document.getElementById(id);
+
+    if(nuevaEscena){
+        nuevaEscena.classList.add("activa");
+    }
 
 }
 
 
 
 // ===============================
-// INICIO DEL VIAJE
+// INICIO
 // ===============================
-
 
 function comenzar(){
 
-
     const musica = document.getElementById("musica");
-
 
     if(musica){
 
-        musica.play();
+        musica.play().catch(()=>{});
 
     }
 
@@ -55,7 +52,6 @@ function comenzar(){
 // ===============================
 // FRASES DEL UNIVERSO
 // ===============================
-
 
 const frasesUniverso = [
 
@@ -75,16 +71,13 @@ let fraseActual = 0;
 
 function cambiarFrases(){
 
-
-    const texto =
-    document.getElementById("estadoUniverso");
+    const texto = document.getElementById("estadoUniverso");
 
 
     if(!texto) return;
 
 
-    texto.innerHTML =
-    frasesUniverso[fraseActual];
+    texto.innerHTML = frasesUniverso[fraseActual];
 
 
     fraseActual++;
@@ -96,9 +89,7 @@ function cambiarFrases(){
 
     }
 
-
 }
-
 
 
 setInterval(cambiarFrases,2500);
@@ -106,8 +97,9 @@ setInterval(cambiarFrases,2500);
 
 
 
+
 // ===============================
-// CARTA
+// CARTA INICIAL
 // ===============================
 
 
@@ -120,6 +112,7 @@ function abrirCarta(){
 
 
 function escribirCarta(){
+
 
     const texto = `
 
@@ -136,6 +129,9 @@ Eres la mejor "coincidencia" que Dios puso en mi camino, una de esas personas qu
 
 
     const elemento = document.getElementById("textoCarta");
+
+
+    if(!elemento) return;
 
 
     elemento.innerHTML = "";
@@ -162,21 +158,18 @@ Eres la mejor "coincidencia" que Dios puso en mi camino, una de esas personas qu
 
         }
 
+
     }
 
 
     escribir();
 
-
 }
-
-}
-
 
 
 
 // ===============================
-// ASTRONAUTA CAMINANDO
+// ASTRONAUTA
 // ===============================
 
 
@@ -216,7 +209,7 @@ function iniciarCaminata(){
 
 
 
-    },500);
+    },800);
 
 
 
@@ -231,8 +224,7 @@ function iniciarCaminata(){
 
 
 
-    },3000);
-
+    },4000);
 
 
 }
@@ -240,23 +232,27 @@ function iniciarCaminata(){
 
 
 
+function irAstronauta(){
+
+    mostrarEscena("astronauta");
+
+    iniciarCaminata();
+
+}
+
+
 
 
 // ===============================
-// MOSTRAR POEMA
+// POEMA
 // ===============================
 
 
 function mostrarTarjeta(){
 
-
     mostrarEscena("tarjeta");
 
-
 }
-
-
-
 
 
 
@@ -266,73 +262,54 @@ function mostrarTarjeta(){
 // ===============================
 
 
-
 const tickets = [
 
-
 {
-
 titulo:"CAMINA CONMIGO",
-
-texto:
-"Quiero descubrir cada rincón del universo contigo, compartir caminos, sueños y momentos que solo tengan sentido porque estamos juntos."
-
+texto:"Quiero descubrir cada rincón del universo contigo, compartir caminos, sueños y momentos que solo tengan sentido porque estamos juntos."
 },
 
 
 {
-
 titulo:"AUNQUE ESTÉS LEJOS",
-
-texto:
-"Aunque existan distancias enormes, siempre habrá una parte de mí buscando la forma de estar contigo."
-
+texto:"Aunque existan distancias enormes, siempre habrá una parte de mí buscando la forma de estar contigo."
 },
 
 
 {
-
 titulo:"SIEMPRE TE ELEGIRÍA",
-
-texto:
-"Entre millones de personas, caminos y universos, volvería a encontrarte y volvería a elegirte."
-
+texto:"Entre millones de personas, caminos y universos, volvería a encontrarte y volvería a elegirte."
 },
 
 
 {
-
 titulo:"NUESTRO UNIVERSO",
-
-texto:
-"El universo puede ser infinito, pero encontrarte hizo que mi pequeño mundo fuera suficiente."
-
+texto:"El universo puede ser infinito, pero encontrarte hizo que mi pequeño mundo fuera suficiente."
 }
 
-
 ];
+
 
 
 let disponibles = [...tickets];
 
 
 
+
+
 function sacarTicket(){
 
 
+    if(disponibles.length === 0){
 
-    if(disponibles.length===0){
-
-        disponibles=[...tickets];
+        disponibles = [...tickets];
 
     }
 
 
 
     const numero =
-    Math.floor(
-    Math.random()*disponibles.length
-    );
+    Math.floor(Math.random()*disponibles.length);
 
 
 
@@ -345,12 +322,16 @@ function sacarTicket(){
 
 
 
-    const texto =
+    const elemento =
     document.getElementById("ticketTexto");
 
 
 
-    texto.innerHTML="";
+    if(!elemento) return;
+
+
+
+    elemento.innerHTML = "";
 
 
 
@@ -369,18 +350,17 @@ function sacarTicket(){
 function escribirTicket(titulo,texto){
 
 
-
     const elemento =
     document.getElementById("ticketTexto");
 
 
 
-    let contenido =
-    `<b>${titulo}</b><br><br>${texto}`;
+    const contenido =
+    titulo + "\n\n" + texto;
 
 
 
-    let i=0;
+    let i = 0;
 
 
 
@@ -392,6 +372,7 @@ function escribirTicket(titulo,texto){
 
             elemento.innerHTML +=
             contenido.charAt(i);
+
 
 
             i++;
@@ -406,12 +387,11 @@ function escribirTicket(titulo,texto){
     }
 
 
+
     escribir();
 
 
 }
-
-
 
 
 
