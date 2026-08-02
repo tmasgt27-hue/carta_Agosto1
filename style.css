@@ -303,3 +303,323 @@ to {
 
 
 }
+
+
+/* =================================
+   STYLE V2.0 - PARTE 2
+   PERSONAJES Y OBJETOS
+================================= */
+
+
+
+/* ASTRONAUTA */
+
+
+.astronauta {
+
+    width:280px;
+
+    animation:
+
+    aparecer 2s ease;
+
+}
+
+
+
+.astronauta.caminando {
+
+    animation:
+
+    caminarAstronauta .8s infinite alternate;
+
+}
+
+
+
+@keyframes caminarAstronauta {
+
+
+from {
+
+    transform:translateX(-10px);
+
+}
+
+
+to {
+
+    transform:translateX(10px);
+
+}
+
+
+}
+
+
+
+
+
+/* LIRIOS */
+
+
+.lirios {
+
+    width:170px;
+
+    margin-top:20px;
+
+    animation:
+
+    flotarSuave 4s ease-in-out infinite;
+
+}
+
+
+
+
+
+@keyframes flotarSuave {
+
+
+0% {
+
+    transform:translateY(0);
+
+}
+
+
+50% {
+
+    transform:translateY(-8px);
+
+}
+
+
+100% {
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* POEMA */
+
+
+.poema {
+
+    width:330px;
+
+    animation:
+
+    aparecer 2s ease,
+
+    flotarPoema 7s ease-in-out infinite;
+
+}
+
+
+
+@keyframes flotarPoema {
+
+
+0% {
+
+    transform:translateY(0);
+
+}
+
+
+50% {
+
+    transform:translateY(-6px);
+
+}
+
+
+100% {
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* MENSAJE DE DESBLOQUEO */
+
+
+.desbloqueado {
+
+    margin-top:25px;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    animation:
+
+    brillo 3s infinite;
+
+}
+
+
+
+
+
+@keyframes brillo {
+
+
+0% {
+
+    opacity:.6;
+
+}
+
+
+50% {
+
+    opacity:1;
+
+}
+
+
+100% {
+
+    opacity:.6;
+
+}
+
+
+}
+
+
+
+
+
+/* MAQUINA DE TICKETS */
+
+
+.maquina {
+
+    width:320px;
+
+    animation:
+
+    aparecer 2s ease;
+
+}
+
+
+
+
+
+.ticketContainer {
+
+    position:relative;
+
+    width:300px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+.ticketImg {
+
+    width:100%;
+
+}
+
+
+
+
+
+/* TEXTO DENTRO DEL TICKET */
+
+
+#ticketTexto {
+
+    position:absolute;
+
+    top:25%;
+
+    left:18%;
+
+    width:64%;
+
+    height:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:#111;
+
+    font-size:15px;
+
+    line-height:1.4;
+
+}
+
+
+
+
+
+/* TICKET APARECIENDO */
+
+
+.ticketAparece {
+
+    animation:
+
+    salirTicket 1s ease;
+
+}
+
+
+
+
+@keyframes salirTicket {
+
+
+from {
+
+    transform:translateY(40px);
+
+    opacity:0;
+
+}
+
+
+to {
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+
+}
