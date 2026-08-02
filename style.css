@@ -623,3 +623,265 @@ to {
 
 
 }
+
+
+/* =================================
+   STYLE V2.0 - PARTE 3
+   DETALLES FINALES Y EFECTOS
+================================= */
+
+
+/* ESTRELLAS FUGACES */
+
+.escena::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+
+    height:80px;
+
+    background:linear-gradient(
+    white,
+    transparent
+    );
+
+    top:-100px;
+
+    left:20%;
+
+    opacity:0;
+
+    transform:rotate(35deg);
+
+    animation:estrellaFugaz 6s infinite;
+
+    z-index:1;
+
+}
+
+
+
+@keyframes estrellaFugaz {
+
+
+0% {
+
+    opacity:0;
+
+    transform:
+    translate(0,0)
+    rotate(35deg);
+
+}
+
+
+10% {
+
+    opacity:1;
+
+}
+
+
+30% {
+
+    opacity:0;
+
+    transform:
+    translate(250px,400px)
+    rotate(35deg);
+
+}
+
+
+100% {
+
+    opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* FINAL CON PAREJA */
+
+
+.pareja {
+
+    width:350px;
+
+    opacity:0;
+
+    animation:
+
+    aparecerPareja 3s ease forwards;
+
+}
+
+
+
+
+@keyframes aparecerPareja {
+
+
+from {
+
+    opacity:0;
+
+    transform:
+    scale(.9)
+    translateY(40px);
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:
+    scale(1)
+    translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* BRILLO SUAVE EN ELEMENTOS IMPORTANTES */
+
+
+.ticketImg,
+.poema,
+.carta,
+.pareja {
+
+    filter:
+    drop-shadow(
+    0 0 15px rgba(255,255,255,.25)
+    );
+
+}
+
+
+
+
+
+/* TRANSICIÓN DE ESCENAS */
+
+.escena.activa {
+
+    animation:
+
+    aparecerEscena 1s ease;
+
+}
+
+
+
+
+@keyframes aparecerEscena {
+
+
+from {
+
+    opacity:0;
+
+}
+
+
+to {
+
+    opacity:1;
+
+}
+
+
+}
+
+
+
+
+
+/* MEJORAS PARA CELULAR */
+
+
+@media(max-width:600px){
+
+
+h1 {
+
+    font-size:32px;
+
+}
+
+
+h2 {
+
+    font-size:24px;
+
+}
+
+
+p {
+
+    font-size:18px;
+
+}
+
+
+.carta {
+
+    width:230px;
+
+}
+
+
+.astronauta {
+
+    width:230px;
+
+}
+
+
+.poema {
+
+    width:280px;
+
+}
+
+
+.maquina {
+
+    width:260px;
+
+}
+
+
+.pareja {
+
+    width:280px;
+
+}
+
+
+button {
+
+    font-size:16px;
+
+    padding:13px 30px;
+
+}
+
+
+}
