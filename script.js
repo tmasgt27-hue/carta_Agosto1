@@ -35,8 +35,6 @@ function mostrarEscena(id) {
 
 function comenzar(){
 
-    alert("¡El botón funciona!");
-
     const musica = document.getElementById("musica");
 
     if(musica){
