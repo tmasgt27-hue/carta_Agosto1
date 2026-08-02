@@ -113,9 +113,62 @@ setInterval(cambiarFrases,2500);
 
 function abrirCarta(){
 
-    mostrarEscena("astronauta");
+    escribirCarta();
 
-    iniciarCaminata();
+}
+
+
+
+function escribirCarta(){
+
+    const texto = `
+
+Mi amor...
+
+Gracias por hacer cada uno de mis días más bonitos.
+
+Hoy quiero recordarte que eres una de las personas más importantes de mi vida, y jamás cambiaría por nada la suerte de haberte encontrado.
+
+Eres la mejor "coincidencia" que Dios puso en mi camino, una de esas personas que llegan sin avisar y terminan convirtiéndose en un lugar al que siempre quiero volver.
+
+`;
+
+
+
+    const elemento = document.getElementById("textoCarta");
+
+
+    elemento.innerHTML = "";
+
+
+    let i = 0;
+
+
+
+    function escribir(){
+
+
+        if(i < texto.length){
+
+
+            elemento.innerHTML += texto.charAt(i);
+
+
+            i++;
+
+
+            setTimeout(escribir,60);
+
+
+        }
+
+    }
+
+
+    escribir();
+
+
+}
 
 }
 
