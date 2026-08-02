@@ -29,6 +29,8 @@ body {
 
 .escena {
 
+    position: relative;
+
     display: none;
 
     width: 100%;
@@ -43,10 +45,7 @@ body {
 
     padding: 30px;
 
-    position: relative;
-
 }
-
 
 
 .escena.activa {
@@ -147,31 +146,25 @@ button:hover {
 
 
 /* ESTRELLAS */
-
 .estrellas {
 
     position: absolute;
 
     width: 100%;
-
     height: 100%;
 
-
     background-image:
-
     radial-gradient(white 1px, transparent 1px);
-
 
     background-size: 50px 50px;
 
+    opacity: 0.5;
 
-    opacity: .5;
+    animation: moverEstrellas 20s linear infinite;
 
-
-    animation: estrellas 20s linear infinite;
+    pointer-events: none;
 
 }
-
 
 
 
