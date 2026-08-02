@@ -12,57 +12,61 @@
 
 </head>
 
-
 <body>
-
 
 <audio id="musica" loop>
     <source src="music/piano.mp3" type="audio/mpeg">
 </audio>
 
-
+<!-- ========================= -->
+<!-- INTRO -->
+<!-- ========================= -->
 
 <section id="inicio" class="escena activa">
 
-<div class="estrellas"></div>
+    <div class="estrellas"></div>
 
+    <h1>Conectando con el universo...</h1>
 
-<h1>
-Conectando con el universo...
-</h1>
+    <p id="estadoUniverso">
+        Sincronizando constelaciones...
+    </p>
 
+    <button
+    id="btnInicio"
+    onclick="comenzar()">
 
-<p>
-Un pequeño viaje creado especialmente para ti.
-</p>
+        Comenzar el viaje ✨
 
-
-<button onclick="comenzar()">
-    Comenzar
-</button>
-
+    </button>
 
 </section>
 
 
 
 
+
+<!-- ========================= -->
+<!-- CARTA -->
+<!-- ========================= -->
 
 <section id="carta" class="escena">
 
+    <img
+    src="img/carta.png"
+    class="carta">
 
-<img src="img/carta.png" class="carta">
+    <h2>
 
+        Una carta llegó desde las estrellas...
 
-<h2>
-Una carta llegó desde las estrellas...
-</h2>
+    </h2>
 
+    <button onclick="abrirCarta()">
 
-<button onclick="abrirCarta()">
-Abrir carta
-</button>
+        Abrir carta
 
+    </button>
 
 </section>
 
@@ -70,32 +74,40 @@ Abrir carta
 
 
 
-
+<!-- ========================= -->
+<!-- ASTRONAUTA -->
+<!-- ========================= -->
 
 <section id="astronauta" class="escena">
 
+    <img
+    id="astronautaImg"
+    src="img/astronauta1.png"
+    class="astronauta">
 
-<img src="img/astronauta.png" class="astronauta">
+    <img
+    src="img/lirios.png"
+    class="lirios">
 
+    <h2>
 
-<img src="img/lirios.png" class="lirios">
+        He cruzado miles de estrellas para entregarte esto.
 
+    </h2>
 
-<h2>
-He cruzado miles de estrellas para entregarte esto.
-</h2>
+    <p>
 
+        Incluso en un universo enorme...
 
-<p>
-Incluso en un universo enorme,
-hay personas que brillan más que cualquier estrella.
-</p>
+        existen personas capaces de iluminarlo por completo.
 
+    </p>
 
-<button onclick="mostrarTarjeta()">
-Recibir flores
-</button>
+    <button onclick="mostrarTarjeta()">
 
+        Recibir flores
+
+    </button>
 
 </section>
 
@@ -103,41 +115,27 @@ Recibir flores
 
 
 
-
+<!-- ========================= -->
+<!-- POEMA -->
+<!-- ========================= -->
 
 <section id="tarjeta" class="escena">
 
+    <img
+    src="img/poema.png"
+    class="poema">
 
-<img src="img/tarjeta.png" class="tarjeta">
+    <div class="desbloqueado">
 
+        ✨ Nuevo recuerdo desbloqueado
 
-<button onclick="leerMensaje()">
-Abrir tarjeta
-</button>
+    </div>
 
+    <button onclick="mostrarEscena('tickets')">
 
-</section>
+        Abrir recuerdo
 
-
-
-
-
-
-
-<section id="mensaje" class="escena">
-
-
-<div class="papel">
-
-<p id="texto"></p>
-
-</div>
-
-
-<button onclick="mostrarEscena('tickets')">
-Continuar viaje
-</button>
-
+    </button>
 
 </section>
 
@@ -145,36 +143,43 @@ Continuar viaje
 
 
 
-
+<!-- ========================= -->
+<!-- TICKETS -->
+<!-- ========================= -->
 
 <section id="tickets" class="escena">
 
+    <img
+    src="img/maquina.png"
+    class="maquina">
 
-<img src="img/maquina.png" class="maquina">
+    <h2>
 
+        ¿Deseas revelar el mensaje que el universo ha reservado para ti?
 
-<h2>
-Recuerdos del universo
-</h2>
+    </h2>
 
+    <div class="ticketContainer">
 
-<div id="ticket">
+        <img
+        src="img/tickets.png"
+        class="ticketImg">
 
-Presiona para recibir un recuerdo
+        <div id="ticketTexto"></div>
 
-</div>
+    </div>
 
+    <button onclick="sacarTicket()">
 
+        ✨ Revelar mensaje
 
-<button onclick="sacarTicket()">
-Sacar ticket
-</button>
+    </button>
 
+    <button onclick="mostrarEscena('final')">
 
-<button onclick="mostrarEscena('final')">
-Continuar
-</button>
+        Continuar
 
+    </button>
 
 </section>
 
@@ -182,37 +187,40 @@ Continuar
 
 
 
-
+<!-- ========================= -->
+<!-- FINAL -->
+<!-- ========================= -->
 
 <section id="final" class="escena">
 
+    <img
+    src="img/pareja.png"
+    class="pareja">
 
-<h2>
-✨
-</h2>
+    <p>
 
+        Y si algún día el universo volviera
+        a escribirse desde el principio...
 
-<p>
-Gracias por hacer de mi vida
-el lugar donde siempre quiero volver.
-</p>
+        volvería a buscarte.
 
+        Volvería a caminar hacia ti.
 
+        Y volvería a elegirte...
 
-<button onclick="reiniciar()">
-Volver a vivir esta historia
-</button>
+        una y otra vez.
 
+    </p>
+
+    <button onclick="reiniciar()">
+
+        ✨ Volver a vivir este viaje
+
+    </button>
 
 </section>
 
-
-
-
-
-
 <script src="script.js"></script>
-
 
 </body>
 
