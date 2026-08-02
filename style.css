@@ -425,3 +425,16 @@ transform:translateY(0);
 
 
 }
+h1,
+h2,
+p,
+button,
+img,
+.papel,
+#ticket {
+
+    position: relative;
+
+    z-index: 2;
+
+}
