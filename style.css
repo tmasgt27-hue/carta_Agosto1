@@ -1,7 +1,7 @@
 /* ==========================================================
    PARA TI ✨
    CONECTANDO CON EL UNIVERSO
-   STYLE.CSS V3.1
+   STYLE.CSS V3.2
    ----------------------------------------------------------
    PARTE 1
    • Reset
@@ -11,11 +11,8 @@
    • Tipografía
    • Botones
    • Universo
-   • Animaciones base
+   • Animaciones
 ========================================================== */
-
-
-
 
 
 /* ==========================================================
@@ -35,16 +32,11 @@ body{
 }
 
 
-
-
-
 /* ==========================================================
    VARIABLES
 ========================================================== */
 
 :root{
-
-    /* Paleta */
 
     --azul-profundo:#050816;
     --azul:#13234f;
@@ -58,17 +50,9 @@ body{
 
     --borde:rgba(255,255,255,.20);
 
-    --radio:28px;
-
     --duracion:.35s ease;
 
-    --sombra:
-    0 0 25px rgba(255,255,255,.08);
-
 }
-
-
-
 
 
 /* ==========================================================
@@ -77,9 +61,7 @@ body{
 
 body{
 
-    font-family:
-    Georgia,
-    serif;
+    font-family:Georgia,serif;
 
     color:var(--texto);
 
@@ -95,7 +77,7 @@ body{
 
     radial-gradient(
         circle at bottom,
-        rgba(30,55,130,.20),
+        rgba(30,55,130,.18),
         transparent 50%
     ),
 
@@ -109,9 +91,6 @@ body{
 }
 
 
-
-
-
 /* ==========================================================
    ESCENAS
 ========================================================== */
@@ -123,19 +102,16 @@ body{
     position:relative;
 
     width:100%;
-
     height:100vh;
 
-    padding:30px;
+    padding:28px;
 
     overflow:hidden;
 
     text-align:center;
 
     justify-content:center;
-
     align-items:center;
-
     flex-direction:column;
 
 }
@@ -144,20 +120,9 @@ body{
 
     display:flex;
 
-    animation:
-
-    aparecerEscena
-    .8s ease;
+    animation:aparecerEscena .8s ease;
 
 }
-
-
-
-
-
-/* ==========================================================
-   TODO SOBRE EL FONDO
-========================================================== */
 
 .escena>*{
 
@@ -166,9 +131,6 @@ body{
     z-index:2;
 
 }
-
-
-
 
 
 /* ==========================================================
@@ -181,42 +143,35 @@ h1{
 
     font-weight:normal;
 
-    line-height:1.3;
-
-    letter-spacing:1px;
-
     margin-bottom:18px;
 
 }
 
 h2{
 
-    font-size:1.45rem;
+    font-size:1.28rem;
 
     font-weight:normal;
 
     line-height:1.45;
 
-    margin-top:22px;
+    margin-top:18px;
+
+    max-width:360px;
 
 }
 
 p{
 
-    max-width:360px;
+    max-width:355px;
 
-    margin-top:18px;
+    margin-top:16px;
+
+    line-height:1.72;
 
     font-size:1rem;
 
-    line-height:1.75;
-
-    opacity:.95;
-
 }
-
-
-
 
 
 /* ==========================================================
@@ -233,12 +188,7 @@ img{
 
     pointer-events:none;
 
-    user-select:none;
-
 }
-
-
-
 
 
 /* ==========================================================
@@ -247,35 +197,29 @@ img{
 
 button{
 
-    margin-top:34px;
+    margin-top:24px;
 
-    width:230px;
+    width:225px;
 
     padding:15px 22px;
 
-    border-radius:999px;
+    border:none;
 
-    border:1px solid var(--borde);
+    border-radius:999px;
 
     background:var(--panel);
 
     color:white;
 
-    font-size:1rem;
-
     font-family:inherit;
+
+    font-size:1rem;
 
     cursor:pointer;
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
-    transition:
-
-    background var(--duracion),
-    border-color var(--duracion),
-    transform var(--duracion);
-
-    flex-shrink:0;
+    transition:.30s;
 
 }
 
@@ -283,13 +227,7 @@ button:hover{
 
     background:var(--panel-hover);
 
-    border-color:
-
-    rgba(255,255,255,.45);
-
-    transform:
-
-    translateY(-2px);
+    transform:translateY(-2px);
 
 }
 
@@ -300,29 +238,15 @@ button:active{
 }
 
 
-
-
-
 /* ==========================================================
    INTRO
 ========================================================== */
 
-#inicio h1{
-
-    margin-bottom:20px;
-
-}
-
 #estadoUniverso{
 
-    min-height:55px;
-
-    opacity:.9;
+    min-height:50px;
 
 }
-
-
-
 
 
 /* ==========================================================
@@ -337,9 +261,9 @@ button:active{
 
     z-index:0;
 
-    opacity:.45;
-
     pointer-events:none;
+
+    opacity:.45;
 
     background-image:
 
@@ -348,120 +272,65 @@ button:active{
         transparent 1px
     );
 
-    background-size:
+    background-size:42px 42px;
 
-    42px 42px;
-
-    animation:
-
-    moverEstrellas
-    80s linear infinite;
+    animation:moverEstrellas 80s linear infinite;
 
 }
 
 
+/* Nebulosas */
 
-
-
-/* Nebulosa superior */
-
-.escena::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:420px;
-
-    height:420px;
-
-    top:-180px;
-
-    left:-120px;
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(
-
-        circle,
-
-        rgba(117,90,210,.18),
-
-        transparent 70%
-
-    );
-
-    filter:blur(45px);
-
-    z-index:0;
-
-}
-
-
-
-
-
-/* Nebulosa inferior */
-
+.escena::before,
 .escena::after{
 
     content:"";
 
     position:absolute;
 
-    width:350px;
-
-    height:350px;
-
-    bottom:-150px;
-
-    right:-120px;
-
     border-radius:50%;
+
+    z-index:0;
+
+    filter:blur(45px);
+
+}
+
+.escena::before{
+
+    width:420px;
+    height:420px;
+
+    top:-180px;
+    left:-120px;
 
     background:
 
     radial-gradient(
-
         circle,
-
-        rgba(65,120,255,.14),
-
+        rgba(117,90,210,.18),
         transparent 70%
-
-    );
-
-    filter:blur(50px);
-
-    z-index:0;
-
-}
-
-
-
-
-
-/* ==========================================================
-   BRILLOS
-========================================================== */
-
-.carta,
-.poema,
-.ticketImg,
-.pareja{
-
-    filter:
-
-    drop-shadow(
-        0 0 18px rgba(255,255,255,.18)
     );
 
 }
 
+.escena::after{
 
+    width:350px;
+    height:350px;
 
+    bottom:-150px;
+    right:-120px;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(65,120,255,.15),
+        transparent 70%
+    );
+
+}
 
 
 /* ==========================================================
@@ -474,9 +343,7 @@ button:active{
 
         opacity:0;
 
-        transform:
-
-        translateY(12px);
+        transform:translateY(12px);
 
     }
 
@@ -484,103 +351,45 @@ button:active{
 
         opacity:1;
 
-        transform:
-
-        translateY(0);
+        transform:translateY(0);
 
     }
 
 }
-
-
-
-
 
 @keyframes moverEstrellas{
 
     from{
 
-        transform:
-
-        translateY(0);
+        transform:translateY(0);
 
     }
 
     to{
 
-        transform:
-
-        translateY(-220px);
+        transform:translateY(-220px);
 
     }
 
 }
-
-
-
-
 
 @keyframes flotar{
 
     0%{
 
-        transform:
-
-        translateY(0);
+        transform:translateY(0);
 
     }
 
     50%{
 
-        transform:
-
-        translateY(-7px);
+        transform:translateY(-6px);
 
     }
 
     100%{
 
-        transform:
-
-        translateY(0);
-
-    }
-
-}
-
-
-
-
-
-/* ==========================================================
-   RESPONSIVE GENERAL
-========================================================== */
-
-@media (max-width:480px){
-
-    h1{
-
-        font-size:1.8rem;
-
-    }
-
-    h2{
-
-        font-size:1.3rem;
-
-    }
-
-    p{
-
-        font-size:.97rem;
-
-    }
-
-    button{
-
-        width:215px;
-
-        font-size:.95rem;
+        transform:translateY(0);
 
     }
 
@@ -588,20 +397,13 @@ button:active{
 
 
 /* ==========================================================
-   PARA TI ✨
-   CONECTANDO CON EL UNIVERSO
-   STYLE.CSS V3.1
-   ----------------------------------------------------------
+   STYLE V3.2
    PARTE 2
    • Carta
    • Astronauta
-   • Lirios
+   • Flores
    • Poema
-   • Nuevo recuerdo
 ========================================================== */
-
-
-
 
 
 /* ==========================================================
@@ -610,24 +412,18 @@ button:active{
 
 .carta{
 
-    width:235px;
+    width:225px;
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 
-    animation:
-
-    flotar 7s ease-in-out infinite;
+    animation:flotar 7s ease-in-out infinite;
 
     filter:
-
     drop-shadow(
-        0 0 22px rgba(242,210,125,.18)
+        0 0 20px rgba(242,210,125,.20)
     );
 
 }
-
-
-
 
 
 /* Papel */
@@ -636,68 +432,25 @@ button:active{
 
     width:100%;
 
-    max-width:370px;
+    max-width:365px;
 
     height:190px;
 
-    margin-top:22px;
+    margin-top:18px;
 
     padding:18px;
 
     overflow-y:auto;
 
-    overflow-x:hidden;
-
     border-radius:22px;
 
-    background:
+    background:rgba(255,255,255,.07);
 
-    rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14);
 
-    border:
-
-    1px solid rgba(255,255,255,.14);
-
-    backdrop-filter:
-
-    blur(12px);
-
-    box-shadow:
-
-    0 0 20px rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
 
 }
-
-
-
-
-
-/* Scroll elegante */
-
-.papelCarta::-webkit-scrollbar{
-
-    width:5px;
-
-}
-
-.papelCarta::-webkit-scrollbar-track{
-
-    background:transparent;
-
-}
-
-.papelCarta::-webkit-scrollbar-thumb{
-
-    background:
-
-    rgba(255,255,255,.28);
-
-    border-radius:999px;
-
-}
-
-
-
 
 
 #textoCarta{
@@ -706,28 +459,9 @@ button:active{
 
     text-align:center;
 
-    font-size:1rem;
-
-    line-height:1.8;
+    line-height:1.75;
 
 }
-
-
-
-
-
-/* Ambos botones ocuparán
-   exactamente la misma posición */
-
-#botonAbrir,
-#botonContinuar{
-
-    width:230px;
-
-}
-
-
-
 
 
 /* ==========================================================
@@ -742,16 +476,13 @@ button:active{
 
     height:270px;
 
-    margin-bottom:20px;
+    margin-bottom:14px;
 
     animation:
-
-    flotarAstronauta 8s ease-in-out infinite;
+    flotarAstronauta
+    8s ease-in-out infinite;
 
 }
-
-
-
 
 
 /* Astronauta */
@@ -760,56 +491,64 @@ button:active{
 
     position:absolute;
 
-    width:200px;
+    width:205px;
 
     left:50%;
 
     top:50%;
 
     transform:
-
     translate(-50%,-50%);
+
+    transition:
+
+    opacity .8s ease,
+    transform .8s ease;
 
 }
 
 
+/* Cuando aparezca el astronauta 3 */
+
+.astronauta3{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.10);
+
+}
 
 
-
-/* Lirios */
+/* Flores */
 
 .lirios{
 
     position:absolute;
 
-    width:92px;
+    width:96px;
 
     left:55%;
 
-    top:60%;
+    top:57%;
 
     transform:
-
     translate(-50%,-50%);
 
     filter:
-
     drop-shadow(
-        0 0 10px rgba(255,255,255,.18)
+        0 0 10px rgba(255,255,255,.20)
     );
 
 }
 
 
-
-
+/* Movimiento */
 
 @keyframes flotarAstronauta{
 
     0%{
 
         transform:
-
         translate(-6px,0);
 
     }
@@ -817,7 +556,6 @@ button:active{
     25%{
 
         transform:
-
         translate(2px,-4px);
 
     }
@@ -825,7 +563,6 @@ button:active{
     50%{
 
         transform:
-
         translate(7px,0);
 
     }
@@ -833,7 +570,6 @@ button:active{
     75%{
 
         transform:
-
         translate(2px,4px);
 
     }
@@ -841,7 +577,6 @@ button:active{
     100%{
 
         transform:
-
         translate(-6px,0);
 
     }
@@ -849,23 +584,22 @@ button:active{
 }
 
 
-
-
-
 #astronauta h2{
 
-    max-width:350px;
-
-}
-
-#astronauta p{
+    margin-top:12px;
 
     max-width:340px;
 
 }
 
 
+#astronauta p{
 
+    margin-top:14px;
+
+    max-width:340px;
+
+}
 
 
 /* ==========================================================
@@ -874,67 +608,43 @@ button:active{
 
 .poema{
 
-    width:285px;
+    width:275px;
 
     animation:
-
-    flotar 8s ease-in-out infinite;
-
-    filter:
-
-    drop-shadow(
-        0 0 18px rgba(255,255,255,.18)
-    );
+    flotar
+    8s ease-in-out infinite;
 
 }
 
 
-
-
-
-/* ==========================================================
-   NUEVO RECUERDO
-========================================================== */
-
 .desbloqueado{
 
-    margin-top:24px;
+    margin-top:20px;
 
-    padding:12px 24px;
+    padding:12px 22px;
 
     border-radius:999px;
 
     background:
+    rgba(255,255,255,.08);
 
-    rgba(255,255,255,.07);
+    color:var(--dorado);
 
     border:
-
-    1px solid rgba(255,255,255,.16);
-
-    color:
-
-    var(--dorado);
-
-    font-size:.95rem;
-
-    letter-spacing:.4px;
+    1px solid rgba(255,255,255,.18);
 
 }
-
-
-
 
 
 /* ==========================================================
    RESPONSIVE
 ========================================================== */
 
-@media (max-width:480px){
+@media(max-width:480px){
 
     .carta{
 
-        width:215px;
+        width:210px;
 
     }
 
@@ -944,39 +654,31 @@ button:active{
 
         height:180px;
 
-        padding:16px;
-
-    }
-
-    #textoCarta{
-
-        font-size:.95rem;
-
     }
 
     .astronautaContainer{
 
-        width:220px;
+        width:225px;
 
-        height:240px;
+        height:245px;
 
     }
 
     .astronauta{
 
-        width:180px;
+        width:185px;
 
     }
 
     .lirios{
 
-        width:84px;
+        width:88px;
 
     }
 
     .poema{
 
-        width:255px;
+        width:250px;
 
     }
 
@@ -984,30 +686,24 @@ button:active{
 
 
 /* ==========================================================
-   PARA TI ✨
-   CONECTANDO CON EL UNIVERSO
-   STYLE.CSS V3.1
-   ----------------------------------------------------------
-   PARTE 3 (DEFINITIVA)
+   STYLE V3.2
+   PARTE 3
    • Máquina
    • Tickets
    • Escena Final
-   • Ajustes finales
+   • Responsive
 ========================================================== */
 
 
-
-
-
 /* ==========================================================
-   MÁQUINA DE TICKETS
+   MÁQUINA
 ========================================================== */
 
 .maquina{
 
-    width:290px;
+    width:235px;
 
-    margin-bottom:18px;
+    margin-bottom:10px;
 
     animation:
     flotar 8s ease-in-out infinite;
@@ -1015,41 +711,32 @@ button:active{
 }
 
 
-
-
-
 /* ==========================================================
-   CONTENEDOR DEL TICKET
+   CONTENEDOR
 ========================================================== */
 
 .ticketContainer{
 
     position:relative;
 
-    width:255px;
+    width:235px;
 
-    margin-top:20px;
+    margin-top:4px;
 
 }
 
 
-
-
+/* Ticket */
 
 .ticketImg{
 
     width:100%;
 
-    display:block;
-
 }
 
 
-
-
-
 /* ==========================================================
-   ÁREA DEL TEXTO
+   TEXTO
 ========================================================== */
 
 #ticketTexto{
@@ -1070,14 +757,11 @@ button:active{
 
     padding:
 
-    66px
-    36px
-    50px;
+    50px
+    30px
+    36px;
 
 }
-
-
-
 
 
 /* ==========================================================
@@ -1088,20 +772,17 @@ button:active{
 
     color:#222;
 
-    font-size:.90rem;
+    font-size:.72rem;
 
     font-weight:bold;
 
     letter-spacing:1px;
 
+    margin-bottom:8px;
+
     text-transform:uppercase;
 
-    margin-bottom:10px;
-
 }
-
-
-
 
 
 /* ==========================================================
@@ -1112,16 +793,13 @@ button:active{
 
     color:#333;
 
-    font-size:.76rem;
+    font-size:.73rem;
 
-    line-height:1.45;
+    line-height:1.42;
 
     margin:0;
 
 }
-
-
-
 
 
 /* ==========================================================
@@ -1130,12 +808,11 @@ button:active{
 
 #botonTicket{
 
-    width:230px;
+    width:220px;
+
+    margin-top:14px;
 
 }
-
-
-
 
 
 /* ==========================================================
@@ -1144,56 +821,43 @@ button:active{
 
 .pareja{
 
-    width:320px;
+    width:310px;
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 
     animation:
-
     flotar 9s ease-in-out infinite;
 
     filter:
 
     drop-shadow(
-        0 0 24px rgba(255,255,255,.18)
+        0 0 22px rgba(255,255,255,.20)
     );
 
 }
 
 
-
-
-
 #final p{
-
-    max-width:350px;
-
-    line-height:1.85;
 
     margin-top:0;
 
+    max-width:345px;
+
+    line-height:1.8;
+
 }
-
-
-
 
 
 #botonReiniciar{
 
-    margin-top:34px;
+    margin-top:28px;
 
 }
 
 
-
-
-
 /* ==========================================================
-   DETALLES GENERALES
+   DETALLES
 ========================================================== */
-
-/* Mantener siempre los botones
-   en su sitio */
 
 button{
 
@@ -1201,11 +865,6 @@ button{
 
 }
 
-
-
-
-
-/* Lectura más agradable */
 
 h1,
 h2,
@@ -1215,12 +874,6 @@ h3{
 
 }
 
-
-
-
-
-/* El texto permanece encima
-   del fondo */
 
 h1,
 h2,
@@ -1235,24 +888,21 @@ button{
 }
 
 
-
-
-
 /* ==========================================================
    RESPONSIVE
 ========================================================== */
 
-@media (max-width:480px){
+@media(max-width:480px){
 
     .maquina{
 
-        width:255px;
+        width:215px;
 
     }
 
     .ticketContainer{
 
-        width:225px;
+        width:205px;
 
     }
 
@@ -1260,21 +910,21 @@ button{
 
         padding:
 
-        58px
-        30px
-        44px;
+        44px
+        24px
+        30px;
 
     }
 
     #ticketTitulo{
 
-        font-size:.80rem;
+        font-size:.66rem;
 
     }
 
     #ticketContenido{
 
-        font-size:.70rem;
+        font-size:.66rem;
 
         line-height:1.35;
 
@@ -1282,7 +932,7 @@ button{
 
     .pareja{
 
-        width:275px;
+        width:265px;
 
     }
 
