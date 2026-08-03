@@ -365,7 +365,7 @@ function iniciarAstronauta(){
 
 function cambiarAstronauta(){
 
-    astronautaImg.style.opacity="0.2";
+    astronautaImg.style.opacity="0";
 
     setTimeout(()=>{
 
