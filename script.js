@@ -149,8 +149,6 @@ let ultimoTicket = false;
 
 function mostrarEscena(id){
 
-    window.scrollTo(0,0);
-
     escenas.forEach(escena=>{
 
         escena.classList.remove("activa");
