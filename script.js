@@ -373,7 +373,11 @@ function cambiarAstronauta(){
 
         astronautaImg.classList.add("astronauta3");
 
-        astronautaImg.style.opacity="1";
+        requestAnimationFrame(()=>{
+
+            astronautaImg.style.opacity="1";
+
+        });
 
     },500);
 
@@ -526,15 +530,13 @@ function reiniciar(){
 
     clearTimeout(temporizadorTexto);
 
-    if(musica){
+if(musica){
 
-        musica.pause();
+    musica.pause();
 
-        musica.currentTime = 0;
+    musica.currentTime = 0;
 
-        musica.play();
-
-    }
+}
 
     mostrarEscena("inicio");
 
