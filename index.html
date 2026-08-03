@@ -3,241 +3,276 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ========================= -->
+    <!-- CONFIGURACIÓN -->
+    <!-- ========================= -->
 
-<title>Para ti ✨</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>Para Ti ✨</title>
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<audio id="musica" loop>
-    <source src="music/piano.mp3" type="audio/mpeg">
+    <!-- ========================= -->
+    <!-- MÚSICA -->
+    <!-- ========================= -->
+
+    <audio id="musica" loop>
+    <source src="music/musica_universo.mp3" type="audio/mpeg">
 </audio>
 
-<!-- ========================= -->
-<!-- INTRO -->
-<!-- ========================= -->
 
-<section id="inicio" class="escena activa">
 
-    <div class="estrellas"></div>
 
-    <h1>Conectando con el universo...</h1>
+    <!-- ========================= -->
+    <!-- INTRO -->
+    <!-- ========================= -->
 
-    <p id="estadoUniverso">
-        Sincronizando constelaciones...
-    </p>
+    <section id="inicio" class="escena activa">
 
-    <button
-    id="btnInicio"
-    onclick="comenzar()">
+        <div class="estrellas"></div>
 
-        Comenzar el viaje ✨
+        <h1>Conectando con el universo...</h1>
 
-    </button>
+        <p id="estadoUniverso">
+            Sincronizando constelaciones...
+        </p>
 
-</section>
+        <button id="btnInicio">
 
+            Comenzar el viaje ✨
 
+        </button>
 
+    </section>
 
 
-<!-- ========================= -->
-<!-- CARTA -->
-<!-- ========================= -->
 
-<section id="carta" class="escena">
 
 
-    <img
-    src="img/carta.png"
-    class="carta">
+    <!-- ========================= -->
+    <!-- CARTA -->
+    <!-- ========================= -->
 
-
-    <h2>
-        Una carta llegó desde las estrellas...
-    </h2>
-
-
-    <div class="papelCarta">
-
-        <p id="textoCarta"></p>
-
-    </div>
-
-<button id="botonAbrir" onclick="abrirCarta()">
-
-    💌 Abrir carta
-
-</button>
-
-
-<button id="botonContinuar"
-onclick="irAstronauta()"
-style="display:none;">
-
-    ✨ Continuar viaje
-
-</button>
-
-
-</section>
-
-
-
-
-
-<!-- ========================= -->
-<!-- ASTRONAUTA -->
-<!-- ========================= -->
-
-<section id="astronauta" class="escena">
-
-    <img
-    id="astronautaImg"
-    src="img/astronauta1.png"
-    class="astronauta">
-
-<img
-src="img/lirioss.png"
-class="lirios">
-
-    <h2>
-
-        He cruzado miles de estrellas para entregarte esto.
-
-    </h2>
-
-    <p>
-
-        Incluso en un universo enorme...
-
-        existen personas capaces de iluminarlo por completo.
-
-    </p>
-
-    <button onclick="mostrarTarjeta()">
-
-        Recibir flores
-
-    </button>
-
-</section>
-
-
-
-
-
-<!-- ========================= -->
-<!-- POEMA -->
-<!-- ========================= -->
-
-<section id="tarjeta" class="escena">
-
-    <img
-    src="img/poema.png"
-    class="poema">
-
-    <div class="desbloqueado">
-
-        ✨ Nuevo recuerdo desbloqueado
-
-    </div>
-
-    <button onclick="mostrarEscena('tickets')">
-
-        Abrir recuerdo
-
-    </button>
-
-</section>
-
-
-
-
-
-<!-- ========================= -->
-<!-- TICKETS -->
-<!-- ========================= -->
-
-<section id="tickets" class="escena">
-
-    <img
-    src="img/maquina.png"
-    class="maquina">
-
-    <h2>
-
-        ¿Deseas revelar el mensaje que el universo ha reservado para ti?
-
-    </h2>
-
-    <div class="ticketContainer">
+    <section id="carta" class="escena">
 
         <img
-        src="img/tickets.png"
-        class="ticketImg">
+            src="img/carta.png"
+            class="carta"
+            alt="Carta">
 
-        <div id="ticketTexto"></div>
+        <h2>
 
-    </div>
+            Una carta llegó desde las estrellas...
 
-    <button onclick="sacarTicket()">
+        </h2>
 
-        ✨ Revelar mensaje
+        <div class="papelCarta">
 
-    </button>
+            <p id="textoCarta"></p>
 
-    <button onclick="mostrarEscena('final')">
+        </div>
 
-        Continuar
+        <button id="botonAbrir">
 
-    </button>
+            💌 Abrir carta
 
-</section>
+        </button>
+
+        <button
+            id="botonContinuar"
+            style="display:none;">
+
+            ✨ Continuar viaje
+
+        </button>
+
+    </section>
 
 
 
 
 
-<!-- ========================= -->
-<!-- FINAL -->
-<!-- ========================= -->
+    <!-- ========================= -->
+    <!-- ASTRONAUTA -->
+    <!-- ========================= -->
 
-<section id="final" class="escena">
+    <section id="astronauta" class="escena">
 
-    <img
-    src="img/pareja.png"
-    class="pareja">
+        <div class="astronautaContainer">
 
-    <p>
+            <img
+                id="astronautaImg"
+                src="img/astronauta1.png"
+                class="astronauta"
+                alt="Astronauta">
 
-        Y si algún día el universo volviera
-        a escribirse desde el principio...
+            <img
+                src="img/lirioss.png"
+                class="lirios"
+                alt="Lirios">
 
-        volvería a buscarte.
+        </div>
 
-        Volvería a caminar hacia ti.
+        <h2>
 
-        Y volvería a elegirte...
+            He cruzado miles de estrellas para entregarte esto.
 
-        una y otra vez.
+        </h2>
 
-    </p>
+        <p>
 
-    <button onclick="reiniciar()">
+            Incluso en un universo enorme...
 
-        ✨ Volver a vivir este viaje
+            <br><br>
 
-    </button>
+            existen personas capaces de iluminarlo por completo.
 
-</section>
+        </p>
 
-<script src="script.js"></script>
+        <button id="botonFlores">
+
+            Recibir flores
+
+        </button>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- POEMA -->
+    <!-- ========================= -->
+
+    <section id="tarjeta" class="escena">
+
+        <img
+            src="img/poema.png"
+            class="poema"
+            alt="Poema">
+
+        <div class="desbloqueado">
+
+            ✨ Nuevo recuerdo desbloqueado
+
+        </div>
+
+        <button id="botonPoema">
+
+            Abrir recuerdo
+
+        </button>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- TICKETS -->
+    <!-- ========================= -->
+
+    <section id="tickets" class="escena">
+
+        <img
+            src="img/maquina.png"
+            class="maquina"
+            alt="Máquina de tickets">
+
+        <h2>
+
+            ¿Deseas revelar el mensaje que el universo ha reservado para ti?
+
+        </h2>
+
+        <div class="ticketContainer">
+
+            <img
+                src="img/tickets.png"
+                class="ticketImg"
+                alt="Ticket">
+
+            <div id="ticketTexto">
+
+                <h3 id="ticketTitulo"></h3>
+
+                <p id="ticketContenido"></p>
+
+            </div>
+
+        </div>
+
+        <button id="botonTicket">
+
+            ✨ Revelar mensaje
+
+        </button>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- FINAL -->
+    <!-- ========================= -->
+
+    <section id="final" class="escena">
+
+        <img
+            src="img/pareja.png"
+            class="pareja"
+            alt="Pareja">
+
+        <p>
+
+            Y si algún día el universo volviera
+            a escribirse desde el principio...
+
+            <br><br>
+
+            volvería a buscarte.
+
+            <br><br>
+
+            Volvería a caminar hacia ti.
+
+            <br><br>
+
+            Y volvería a elegirte...
+
+            <br>
+
+            una y otra vez.
+
+        </p>
+
+        <button id="botonReiniciar">
+
+            ✨ Volver a vivir este viaje
+
+        </button>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
 
 </body>
 
