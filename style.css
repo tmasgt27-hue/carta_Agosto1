@@ -521,11 +521,11 @@ button:active{
 
     position:absolute;
 
-    width:118px;
+    width:155px;
 
-    left:56%;
+    left:50%;
 
-    top:58%;
+    top:62%;
 
     transform:translate(-50%,-50%);
 
@@ -653,9 +653,8 @@ button:active{
 
     .astronautaContainer{
 
-        width:225px;
-
-        height:245px;
+        width:285px;
+height:310px;
 
     }
 
@@ -667,9 +666,9 @@ button:active{
 
     .lirios{
 
-        width:88px;
+    width:125px;
 
-    }
+}
 
     .poema{
 
@@ -744,15 +743,14 @@ button:active{
 
     flex-direction:column;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     align-items:center;
 
     text-align:center;
 
     padding:
-
-    50px
+    42px
     30px
     36px;
 
@@ -767,13 +765,13 @@ button:active{
 
     color:#222;
 
-    font-size:.72rem;
+    font-size:.68rem;
 
     font-weight:bold;
 
     letter-spacing:1px;
 
-    margin-bottom:8px;
+    margin-bottom:6px;
 
     text-transform:uppercase;
 
@@ -788,14 +786,13 @@ button:active{
 
     color:#333;
 
-    font-size:.73rem;
+    font-size:.67rem;
 
-    line-height:1.42;
+    line-height:1.35;
 
     margin:0;
 
 }
-
 
 /* ==========================================================
    BOTÓN
