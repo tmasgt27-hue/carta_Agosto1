@@ -749,8 +749,11 @@ height:310px;
 
     text-transform:uppercase;
 
-}
+    position:relative;
 
+    top:-1px;
+
+}
 
 /* ==========================================================
    CONTENIDO
@@ -767,6 +770,10 @@ height:310px;
     margin:0;
 
     max-width:150px;
+
+    position:relative;
+
+    top:-2px;
 
 }
 
