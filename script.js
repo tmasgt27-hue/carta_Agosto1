@@ -1,16 +1,14 @@
 // ==========================================================
 // PARA TI ✨
-// CONECTANDO CON EL UNIVERSO 🌌
-//
-// SCRIPT V3 FINAL
+// CONECTANDO CON EL UNIVERSO
+// SCRIPT V4
 //
 // PARTE 1
 // • Referencias
 // • Constantes
 // • Variables
-// • Escenas
+// • Utilidades
 // • Inicio
-// • Frases del universo
 // ==========================================================
 
 
@@ -76,7 +74,7 @@ const FRASES_UNIVERSO = [
 
 
 // ==========================================================
-// MENSAJE DE LA CARTA
+// CARTA
 // ==========================================================
 
 const MENSAJE_CARTA = `Mi amor...
@@ -97,25 +95,25 @@ Eres la mejor "coincidencia" que Dios puso en mi camino, una de esas personas qu
 
 const TICKETS = [
 
-    {
-        titulo: "CAMINA CONMIGO",
-        contenido: "Quiero descubrir cada rincón del universo contigo, compartir caminos, sueños y momentos que solo tengan sentido porque estamos juntos."
-    },
+{
+titulo:"CAMINA CONMIGO",
+contenido:"Quiero descubrir cada rincón del universo contigo, compartir caminos, sueños y momentos que solo tengan sentido porque estamos juntos."
+},
 
-    {
-        titulo: "AUNQUE ESTÉS LEJOS",
-        contenido: "Aunque existan distancias enormes, siempre habrá una parte de mí buscando la forma de estar contigo."
-    },
+{
+titulo:"AUNQUE ESTÉS LEJOS",
+contenido:"Aunque existan distancias enormes, siempre habrá una parte de mí buscando la forma de estar contigo."
+},
 
-    {
-        titulo: "SIEMPRE TE ELEGIRÍA",
-        contenido: "Entre millones de personas, caminos y universos, volvería a encontrarte y volvería a elegirte."
-    },
+{
+titulo:"SIEMPRE TE ELEGIRÍA",
+contenido:"Entre millones de personas, caminos y universos, volvería a encontrarte y volvería a elegirte."
+},
 
-    {
-        titulo: "NUESTRO UNIVERSO",
-        contenido: "El universo puede ser infinito, pero encontrarte hizo que mi pequeño mundo fuera suficiente."
-    }
+{
+titulo:"NUESTRO UNIVERSO",
+contenido:"El universo puede ser infinito, pero encontrarte hizo que mi pequeño mundo fuera suficiente."
+}
 
 ];
 
@@ -131,11 +129,9 @@ let indiceFrase = 0;
 
 let intervaloFrases = null;
 
-let temporizadorEscritura = null;
+let temporizadorTexto = null;
 
 let cartaAbierta = false;
-
-let animacionAstronauta = null;
 
 let ticketsDisponibles = [];
 
@@ -148,7 +144,7 @@ let ultimoTicket = false;
 
 
 // ==========================================================
-// CAMBIO DE ESCENAS
+// CAMBIAR ESCENA
 // ==========================================================
 
 function mostrarEscena(id){
@@ -159,13 +155,10 @@ function mostrarEscena(id){
 
     });
 
-    const nuevaEscena = document.getElementById(id);
-
-    if(nuevaEscena){
-
-        nuevaEscena.classList.add("activa");
-
-    }
+    document
+        .getElementById(id)
+        .classList
+        .add("activa");
 
 }
 
@@ -174,20 +167,56 @@ function mostrarEscena(id){
 
 
 // ==========================================================
-// COMENZAR EL VIAJE
+// EFECTO MÁQUINA DE ESCRIBIR
 // ==========================================================
 
-function comenzar(){
+function escribirTexto(
 
-    if(musica){
+    elemento,
 
-        musica.volume = 0.35;
+    texto,
 
-        musica.play().catch(()=>{});
+    velocidad,
+
+    finalizar = null
+
+){
+
+    clearTimeout(temporizadorTexto);
+
+    elemento.textContent = "";
+
+    let i = 0;
+
+    function escribir(){
+
+        if(i < texto.length){
+
+            elemento.textContent += texto.charAt(i);
+
+            i++;
+
+            temporizadorTexto = setTimeout(
+
+                escribir,
+
+                velocidad
+
+            );
+
+        }else{
+
+            if(typeof finalizar === "function"){
+
+                finalizar();
+
+            }
+
+        }
 
     }
 
-    mostrarEscena("carta");
+    escribir();
 
 }
 
@@ -236,7 +265,7 @@ function iniciarFrases(){
 
 // ==========================================================
 // PARTE 2
-// • Función universal para escribir texto
+// • Comenzar viaje
 // • Carta
 // • Astronauta
 // • Poema
@@ -247,46 +276,32 @@ function iniciarFrases(){
 
 
 // ==========================================================
-// ESCRIBIR TEXTO
+// COMENZAR VIAJE
 // ==========================================================
 
-function escribirTexto(elemento, texto, velocidad, alFinal = null){
+function comenzar(){
 
-    clearTimeout(temporizadorEscritura);
+    if(musica){
 
-    elemento.textContent = "";
+        musica.volume = 0.35;
 
-    let indice = 0;
+        musica.currentTime = 0;
 
-    function escribir(){
+        const reproducir = musica.play();
 
-        if(indice < texto.length){
+        if(reproducir){
 
-            elemento.textContent += texto.charAt(indice);
+            reproducir.catch(error=>{
 
-            indice++;
+                console.log("La música no pudo reproducirse:", error);
 
-            temporizadorEscritura = setTimeout(
-
-                escribir,
-
-                velocidad
-
-            );
-
-        }else{
-
-            if(typeof alFinal === "function"){
-
-                alFinal();
-
-            }
+            });
 
         }
 
     }
 
-    escribir();
+    mostrarEscena("carta");
 
 }
 
@@ -300,11 +315,7 @@ function escribirTexto(elemento, texto, velocidad, alFinal = null){
 
 function abrirCarta(){
 
-    if(cartaAbierta){
-
-        return;
-
-    }
+    if(cartaAbierta) return;
 
     cartaAbierta = true;
 
@@ -318,9 +329,9 @@ function abrirCarta(){
 
         ()=>{
 
-            botonAbrir.style.display = "none";
+            botonAbrir.style.display="none";
 
-            botonContinuar.style.display = "inline-block";
+            botonContinuar.style.display="inline-block";
 
         }
 
@@ -336,27 +347,15 @@ function abrirCarta(){
 // ASTRONAUTA
 // ==========================================================
 
-function iniciarCaminata(){
+function iniciarAstronauta(){
 
-    clearInterval(animacionAstronauta);
+    astronautaImg.classList.remove("astronauta3");
 
-    let sprite = 1;
+    astronautaImg.src="img/astronauta1.png";
 
-    astronautaImg.src = "img/astronauta1.png";
+    astronautaImg.style.opacity="1";
 
-    animacionAstronauta = setInterval(()=>{
-
-        sprite++;
-
-        if(sprite > 3){
-
-            sprite = 1;
-
-        }
-
-        astronautaImg.src = `img/astronauta${sprite}.png`;
-
-    },250);
+    astronautaImg.style.transform="translate(-50%,-50%)";
 
 }
 
@@ -364,13 +363,19 @@ function iniciarCaminata(){
 
 
 
-function detenerCaminata(){
+function cambiarAstronauta(){
 
-    clearInterval(animacionAstronauta);
+    astronautaImg.style.opacity="0";
 
-    animacionAstronauta = null;
+    setTimeout(()=>{
 
-    astronautaImg.src = "img/astronauta3.png";
+        astronautaImg.src="img/astronauta3.png";
+
+        astronautaImg.classList.add("astronauta3");
+
+        astronautaImg.style.opacity="1";
+
+    },500);
 
 }
 
@@ -382,13 +387,13 @@ function irAstronauta(){
 
     mostrarEscena("astronauta");
 
-    iniciarCaminata();
+    iniciarAstronauta();
 
     setTimeout(()=>{
 
-        detenerCaminata();
+        cambiarAstronauta();
 
-    },4000);
+    },3000);
 
 }
 
@@ -405,7 +410,6 @@ function mostrarTarjeta(){
     mostrarEscena("tarjeta");
 
 }
-
 
 // ==========================================================
 // PARTE 3
@@ -427,11 +431,11 @@ function mezclarTickets(){
 
     ticketsDisponibles = [...TICKETS];
 
-    for(let i = ticketsDisponibles.length - 1; i > 0; i--){
+    for(let i=ticketsDisponibles.length-1;i>0;i--){
 
-        const j = Math.floor(Math.random() * (i + 1));
+        const j=Math.floor(Math.random()*(i+1));
 
-        [ticketsDisponibles[i], ticketsDisponibles[j]] = [
+        [ticketsDisponibles[i],ticketsDisponibles[j]]=[
 
             ticketsDisponibles[j],
             ticketsDisponibles[i]
@@ -440,9 +444,9 @@ function mezclarTickets(){
 
     }
 
-    indiceTicket = 0;
+    indiceTicket=0;
 
-    ultimoTicket = false;
+    ultimoTicket=false;
 
 }
 
@@ -456,15 +460,15 @@ function mezclarTickets(){
 
 function sacarTicket(){
 
-    if(indiceTicket >= ticketsDisponibles.length){
+    if(indiceTicket>=ticketsDisponibles.length){
 
         return;
 
     }
 
-    const ticket = ticketsDisponibles[indiceTicket];
+    const ticket=ticketsDisponibles[indiceTicket];
 
-    ticketTitulo.textContent = ticket.titulo;
+    ticketTitulo.textContent=ticket.titulo;
 
     escribirTexto(
 
@@ -478,11 +482,11 @@ function sacarTicket(){
 
     indiceTicket++;
 
-    if(indiceTicket >= ticketsDisponibles.length){
+    if(indiceTicket>=ticketsDisponibles.length){
 
-        ultimoTicket = true;
+        ultimoTicket=true;
 
-        botonTicket.textContent = "✨ Continuar";
+        botonTicket.textContent="✨ Continuar";
 
     }
 
@@ -493,7 +497,7 @@ function sacarTicket(){
 
 
 // ==========================================================
-// BOTÓN DE TICKETS
+// BOTÓN TICKET
 // ==========================================================
 
 function accionBotonTicket(){
@@ -520,25 +524,27 @@ function accionBotonTicket(){
 
 function reiniciar(){
 
-    clearTimeout(temporizadorEscritura);
-
-    detenerCaminata();
+    clearTimeout(temporizadorTexto);
 
     mostrarEscena("inicio");
 
-    cartaAbierta = false;
+    cartaAbierta=false;
 
-    textoCarta.textContent = "";
+    textoCarta.textContent="";
 
-    botonAbrir.style.display = "inline-block";
+    botonAbrir.style.display="inline-block";
 
-    botonContinuar.style.display = "none";
+    botonContinuar.style.display="none";
 
-    ticketTitulo.textContent = "";
+    ticketTitulo.textContent="";
 
-    ticketContenido.textContent = "";
+    ticketContenido.textContent="";
 
-    botonTicket.textContent = "✨ Revelar mensaje";
+    botonTicket.textContent="✨ Revelar mensaje";
+
+    indiceFrase=0;
+
+    iniciarFrases();
 
     mezclarTickets();
 
