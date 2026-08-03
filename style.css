@@ -515,26 +515,6 @@ button:active{
 }
 
 
-/* Flores */
-
-.lirios{
-
-    position:absolute;
-
-    width:155px;
-
-    left:50%;
-
-    top:62%;
-
-    transform:translate(-50%,-50%);
-
-    filter:
-    drop-shadow(
-        0 0 14px rgba(255,255,255,.28)
-    );
-
-}
 
 
 /* Movimiento */
@@ -664,12 +644,6 @@ height:310px;
 
     }
 
-    .lirios{
-
-    width:125px;
-
-}
-
     .poema{
 
         width:250px;
@@ -750,9 +724,9 @@ height:310px;
     text-align:center;
 
     padding:
-    46px
+    48px
     34px
-    36px;
+    34px;
 
 }
 
