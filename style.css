@@ -724,9 +724,9 @@ height:310px;
     text-align:center;
 
     padding:
-    48px
+    44px
     34px
-    34px;
+    38px;
 
 }
 
@@ -903,5 +903,15 @@ button{
         width:265px;
 
     }
+
+}
+
+/* ==========================================================
+   AJUSTE ASTRONAUTA
+========================================================== */
+
+#astronauta{
+
+    transform:translateY(-12px);
 
 }
