@@ -743,15 +743,15 @@ height:310px;
 
     flex-direction:column;
 
-    justify-content:flex-start;
+    justify-content:center;
 
     align-items:center;
 
     text-align:center;
 
     padding:
-    42px
-    30px
+    46px
+    34px
     36px;
 
 }
@@ -786,11 +786,13 @@ height:310px;
 
     color:#333;
 
-    font-size:.67rem;
+    font-size:.75rem;
 
-    line-height:1.35;
+    line-height:1.38;
 
     margin:0;
+
+    max-width:150px;
 
 }
 
