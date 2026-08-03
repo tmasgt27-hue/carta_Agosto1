@@ -526,6 +526,16 @@ function reiniciar(){
 
     clearTimeout(temporizadorTexto);
 
+    if(musica){
+
+        musica.pause();
+
+        musica.currentTime = 0;
+
+        musica.play();
+
+    }
+
     mostrarEscena("inicio");
 
     cartaAbierta=false;
